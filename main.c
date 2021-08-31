@@ -5,7 +5,7 @@
 int main(void){
 	//affichageJeux();
 	//verificationAdherent();
-	affichageMenu();
-	choixMenu();
+	//affichageMenu();
+	//choixMenu();
 	return 0;
 }

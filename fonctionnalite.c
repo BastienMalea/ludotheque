@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include<stdlib.h>
 
+typedef struct Adherent
+{
+	char nomPrenom[256];
+	char genre[10];
+	int id;
+};
+
+Creer constante qui ouvre le fichier adherent.txt et jeux.txt
+
 //-----------------1ere fonctionnalité dans le menu-------------------------
 //TODO savoir lire la date d'un fichier + Probleme d'ouverture fichier 
 void affichageAdherents(void){
@@ -22,13 +31,27 @@ void affichageAdherents(void){
 	fclose(f);
 }
 
+
+void inscriptionAdherent(Adherent * a){
+	char nomPrenom[256];
+	char genre[10];
+	printf("Donnez votre nom + prenom svp : \n");
+	fgets(nomPrenom,256,stdin);
+	strcpy(a->nomPrenom, nomPrenom);
+	printf("Quel est votre genre : (homme/femme) \n");
+	scanf("%s", genre);
+	strcpy(a->genre, genre);
+	//TODO : faire id+1 par rapport au dernier Id du fichier adherent.txt ou faire un random qui existe pas déjà
+	a->id=
+	fprintf()
+}
+
 //TODO 1ere verif : le prenom, si le meme -> 2eme verif : le nom, si le meme -> 3 eme verif : la dateNaissance
 void verificationAdherent(void){
 	char nomPrenom[256];
 	printf("Donnez moi votre nom et prenom : \n");
 	fgets(nomPrenom,256, stdin);
 	printf("Votre nom est bien : %s \n",nomPrenom);
-
 }
 
 
