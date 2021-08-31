@@ -3,7 +3,7 @@
 #include "ludotheque.h"
 
 int main(void){
-	//affichageJeux();
+	affichageJeux(&flot);
 	//verificationAdherent();
 	//affichageMenu();
 	//choixMenu();

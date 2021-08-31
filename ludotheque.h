@@ -4,7 +4,7 @@ void choixMenu(void);
 void affichageMenu(void);
 void verificationAdherent(void);
 void affichageJeux(void);
-void affichageAdherents(void);
+void affichageAdherents(FILE *fic);
 
-void inscriptionAdherent(Adherent * a);
-void verificationAdherent(void);
+void inscriptionAdherent(Adherent * a, FILE *fic);
+void affichageJeux(FILE *flot);

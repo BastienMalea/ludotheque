@@ -9,30 +9,30 @@ typedef struct Adherent
 	int id;
 };
 
-Creer constante qui ouvre le fichier adherent.txt et jeux.txt
+FILE *fic = fopen("Adherents.txt","r");
+FILE *flot = fopen("Jeux.txt","r");
 
 //-----------------1ere fonctionnalité dans le menu-------------------------
 //TODO savoir lire la date d'un fichier + Probleme d'ouverture fichier 
-void affichageAdherents(void){
+void affichageAdherents(FILE *fic){
 	printf("Je suis dans affichageAdherents");
 	char nomPrenom[256], genre[25];
 	int date, id;
-	FILE *f= fopen("Adherents.txt","r");
-	if(f==NULL){
+	if(fic==NULL){
 		printf("Erreur lors de l'ouverture du fichier adherents.txt en mode lecture");
 		exit(1);
 	}
-	fscanf(f,"%s %d %s %d",nomPrenom,&date,genre,id);
+	fscanf(fic,"%s %d %s %d",nomPrenom,&date,genre,id);
 	printf("Le nom prenom : %s la date de naissance: %d le genre : %s et l'ID : %d ", nomPrenom, date, genre,id);
-	while(!feof(f)){
+	while(!feof(fic)){
 		printf("Le nom prenom : %s la date de naissance: %d le genre : %s et l'ID : %d ", nomPrenom, date, genre,id);
 		fscanf(f,"%s %d %s %d",nomPrenom,&date,genre,id);
 	}
-	fclose(f);
+	fclose(fic);
 }
 
 
-void inscriptionAdherent(Adherent * a){
+void inscriptionAdherent(Adherent * a, FILE *fic){
 	char nomPrenom[256];
 	char genre[10];
 	printf("Donnez votre nom + prenom svp : \n");
@@ -42,8 +42,8 @@ void inscriptionAdherent(Adherent * a){
 	scanf("%s", genre);
 	strcpy(a->genre, genre);
 	//TODO : faire id+1 par rapport au dernier Id du fichier adherent.txt ou faire un random qui existe pas déjà
-	a->id=
-	fprintf()
+	//a->id=
+	fprintf();
 }
 
 //TODO 1ere verif : le prenom, si le meme -> 2eme verif : le nom, si le meme -> 3 eme verif : la dateNaissance
@@ -57,11 +57,10 @@ void verificationAdherent(void){
 
 //-----------------2eme fonctionnalité dans le menu-------------------------
 //TODO Aligner lors de l'affichage 
-void affichageJeux(void){
+void affichageJeux(FILE *flot){
 	char nomJeu[256], typeJeu[256];
 	char type[50];
 	int exemplaire;
-	FILE *flot= fopen("Jeux.txt","r");
 	if(flot==NULL){
 		printf("Erreur lors de l'ouverture du fichier Jeux.txt en lecture ");
 		exit(1);
