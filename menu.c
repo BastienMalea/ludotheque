@@ -1,5 +1,6 @@
 #include "ludotheque.h"
 #include <stdio.h>
+#include <string.h>
 #include<stdlib.h>
 
 void choixMenu(void){
@@ -18,6 +19,7 @@ void choixMenu(void){
 			affichageJeux();
 			break;
 	}
+
 }
 
 void affichageMenu(void){
