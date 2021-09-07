@@ -33,19 +33,18 @@ void inscriptionAdherent(void){
 	}
 	Adherent *a=NULL;
 	int id;
-	char nomPrenom[20],genre[25];
+	char nomPrenom[256];
+	char genre[25];
 	printf("Donnez moi votre nom et prenom : \n");
-	fgets(nomPrenom,40,stdin);
-    nomPrenom[strlen(nomPrenom)-1] = '\0';
-    printf("\n");
-	strcpy(a->nomPrenom,nomPrenom);
-	printf("Votre nom est bien : %s \n",a->nomPrenom);
+	fgets(nomPrenom,256, stdin);
+	printf("Votre nom est bien : %s \n",nomPrenom);
 	printf("Quel est votre genre : (homme/femme) \n");
 	scanf("%s",genre);
-	fscanf(fic,"%s %s %d",nomPrenom,genre,id);
+	printf("Quel est votre genre : %s \n",genre);
+	fscanf(fic,"%s %s %d",nomPrenom,genre,&id);
 	while(!feof(fic)){
 		printf("Le nom prenom : %s le genre : %s et l'ID : %d ", nomPrenom, genre,id);
-		fscanf(fic,"%s %s %d",nomPrenom,genre,id);
+		fscanf(fic,"%s %s %d",nomPrenom,genre,&id);
 	}
 	a->id+=id;
 	printf("Votre id a bien conserver : %d \n", a->id);
@@ -63,6 +62,7 @@ void verificationAdherent(void){
 	printf("Votre nom est bien : %s \n",nomPrenom);
 	printf("Quel est votre genre : (homme/femme) \n");
 	scanf("%s",genre);
+	printf("Quel est votre genre : %s \n",genre);
 }
 
 

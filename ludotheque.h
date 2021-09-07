@@ -13,7 +13,7 @@ void inscriptionAdherent(void);
 
 //Structure : 
 
-typedef struct Adherent
+typedef struct adherent
 {
 	char nomPrenom[256];
 	char genre[10];
